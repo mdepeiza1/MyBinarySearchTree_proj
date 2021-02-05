@@ -17,8 +17,10 @@ namespace MyBinarySearchTree
             bst.Add(new Node(4));
             bst.Add(new Node(7));
 
-            bst.Search(new Node(7));
-            bst.Search(new Node(9));
+            bool search1;
+            bool search2;
+            search1 = bst.Search(7);
+            search2 = bst.Search(9);
         }
     }
 }
