@@ -21,7 +21,7 @@ namespace MyBinarySearchTree
                 Node focusNode = rootNode;
                 while (true)
                 {
-                    if (nodeToAdd.data.CompareTo(focusNode) < 0)
+                    if (nodeToAdd.data.CompareTo(focusNode.data) < 0)
                     {
                         if (focusNode.leftNode == null)
                         {
@@ -33,7 +33,7 @@ namespace MyBinarySearchTree
                             focusNode = focusNode.leftNode;
                         }
                     }
-                    else if(nodeToAdd.data.CompareTo(focusNode) > 0)
+                    else if(nodeToAdd.data.CompareTo(focusNode.data) > 0)
                     {
                         if (focusNode.rightNode == null)
                         {
@@ -51,6 +51,26 @@ namespace MyBinarySearchTree
                     }
                 }
             }
+        }
+        public Node Search(Node nodeToSearchFor)
+        {
+            Node focusNode = rootNode;
+            while(focusNode != null)
+            {
+                if(nodeToSearchFor.data.CompareTo(focusNode.data) == 0)
+                {
+                    return focusNode;
+                }
+                else if(nodeToSearchFor.data.CompareTo(focusNode.data) < 0)
+                {
+                    focusNode = focusNode.leftNode;
+                }
+                else
+                {
+                    focusNode = focusNode.rightNode;
+                }
+            }
+            return focusNode;
         }
     }
 }
